@@ -214,7 +214,9 @@ section { padding: 5rem 5%; }
   padding: 0.2rem 0.6rem; border-radius: 2px;
   font-weight: 500; letter-spacing: 0.04em;
 }
-.card-footer { display: flex; align-items: center; justify-content: flex-end; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; }
+.card-price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; }
+.card-price span { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: var(--gray); font-weight: 400; }
 .book-btn {
   background: var(--black); color: var(--white);
   padding: 0.55rem 1.2rem; border: none; border-radius: 2px;
@@ -477,7 +479,7 @@ footer {
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text">
-    <div class="hero-tag">📍 Vadodara · Gujarat</div>
+    <div class="hero-tag">📍 Dwarka · Gujarat</div>
     <h1 class="hero-title">Ride the Roads<br>on Your <em>Terms</em></h1>
     <p class="hero-sub">Premium bikes & cars for rent — daily, weekly, or monthly. Flexible pickup, instant WhatsApp booking, and zero hidden charges.</p>
     <div class="hero-btns">
@@ -491,7 +493,7 @@ footer {
       <div class="img-label">Available Now</div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Vehicles</div></div>
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Vehicles</div></div>
       <div class="stat-card"><div class="stat-num">4.9★</div><div class="stat-label">Rating</div></div>
       <div class="stat-card"><div class="stat-num">2K+</div><div class="stat-label">Rides Done</div></div>
     </div>
@@ -505,137 +507,47 @@ footer {
     <h2 class="section-title">Choose Your Ride</h2>
     <p class="section-sub">Well-maintained vehicles serviced regularly. Every rental comes with full tank and free helmet.</p>
   </div>
+
   <div class="fleet-tabs">
     <button class="tab-btn active" onclick="filterFleet('all', this)">All</button>
     <button class="tab-btn" onclick="filterFleet('bike', this)">Bikes</button>
     <button class="tab-btn" onclick="filterFleet('car', this)">Cars</button>
   </div>
+
   <div class="fleet-grid" id="fleetGrid">
 
+    <!-- BIKE: Honda Active -->
     <div class="vehicle-card show" data-type="bike">
-      <div class="card-img">🏍️<span class="card-badge">Popular</span></div>
-      <div class="card-body">
-        <div class="card-type">Motorcycle</div>
-        <div class="card-name">Royal Enfield Classic 350</div>
-        <div class="card-features">
-          <span class="feat-tag">350cc</span>
-          <span class="feat-tag">Manual</span>
-          <span class="feat-tag">Helmet ✓</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Royal Enfield Classic 350','Motorcycle','🏍️')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="vehicle-card show" data-type="bike">
-      <div class="card-img">🛵</div>
+      <div class="card-img">🛵<span class="card-badge">Available</span></div>
       <div class="card-body">
         <div class="card-type">Scooter</div>
-        <div class="card-name">Honda Activa 6G</div>
+        <div class="card-name">Honda Activa (Active)</div>
         <div class="card-features">
           <span class="feat-tag">110cc</span>
           <span class="feat-tag">Automatic</span>
           <span class="feat-tag">Helmet ✓</span>
         </div>
         <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Honda Activa 6G','Scooter','🛵')">Book Now</button>
+          <div class="card-price">₹350<span>/day</span></div>
+          <button class="book-btn" onclick="openModal('Honda Activa (Active)','Scooter','🛵','₹350/day')">Book Now</button>
         </div>
       </div>
     </div>
 
-    <div class="vehicle-card show" data-type="bike">
-      <div class="card-img">🏍️<span class="card-badge">New</span></div>
-      <div class="card-body">
-        <div class="card-type">Sports Bike</div>
-        <div class="card-name">KTM Duke 200</div>
-        <div class="card-features">
-          <span class="feat-tag">200cc</span>
-          <span class="feat-tag">Manual</span>
-          <span class="feat-tag">ABS</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('KTM Duke 200','Sports Bike','🏍️')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="vehicle-card show" data-type="bike">
-      <div class="card-img">🛵</div>
-      <div class="card-body">
-        <div class="card-type">Scooter</div>
-        <div class="card-name">TVS Jupiter</div>
-        <div class="card-features">
-          <span class="feat-tag">110cc</span>
-          <span class="feat-tag">Automatic</span>
-          <span class="feat-tag">Helmet ✓</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('TVS Jupiter','Scooter','🛵')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
+    <!-- CAR: Ertiga Desire -->
     <div class="vehicle-card show" data-type="car">
-      <div class="card-img">🚗<span class="card-badge">Popular</span></div>
+      <div class="card-img">🚕<span class="card-badge">Available</span></div>
       <div class="card-body">
-        <div class="card-type">Hatchback</div>
-        <div class="card-name">Maruti Swift</div>
-        <div class="card-features">
-          <span class="feat-tag">Petrol</span>
-          <span class="feat-tag">Manual</span>
-          <span class="feat-tag">AC ✓</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Maruti Swift','Hatchback','🚗')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="vehicle-card show" data-type="car">
-      <div class="card-img">🚙</div>
-      <div class="card-body">
-        <div class="card-type">Sedan</div>
-        <div class="card-name">Honda City</div>
-        <div class="card-features">
-          <span class="feat-tag">Petrol</span>
-          <span class="feat-tag">Manual</span>
-          <span class="feat-tag">AC ✓</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Honda City','Sedan','🚙')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="vehicle-card show" data-type="car">
-      <div class="card-img">🚕<span class="card-badge">New</span></div>
-      <div class="card-body">
-        <div class="card-type">SUV</div>
-        <div class="card-name">Maruti Ertiga</div>
+        <div class="card-type">MPV</div>
+        <div class="card-name">Ertiga Desire</div>
         <div class="card-features">
           <span class="feat-tag">7-Seater</span>
-          <span class="feat-tag">Diesel</span>
-          <span class="feat-tag">AC ✓</span>
-        </div>
-        <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Maruti Ertiga','SUV','🚕')">Book Now</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="vehicle-card show" data-type="car">
-      <div class="card-img">🚗</div>
-      <div class="card-body">
-        <div class="card-type">Hatchback</div>
-        <div class="card-name">Hyundai i20</div>
-        <div class="card-features">
           <span class="feat-tag">Petrol</span>
-          <span class="feat-tag">Automatic</span>
           <span class="feat-tag">AC ✓</span>
         </div>
         <div class="card-footer">
-          <button class="book-btn" onclick="openModal('Hyundai i20','Hatchback','🚗')">Book Now</button>
+          <div class="card-price">₹2,200<span>/day</span></div>
+          <button class="book-btn" onclick="openModal('Ertiga Desire','MPV','🚕','₹2,200/day')">Book Now</button>
         </div>
       </div>
     </div>
@@ -683,8 +595,8 @@ footer {
   <div class="about-img">🚗</div>
   <div class="about-content">
     <div class="section-tag">About Us</div>
-    <h2 class="section-title">Vadodara's Trusted Rental Partner</h2>
-    <p class="section-sub">Radhe Krishna Bike Rental has been serving the people of Vadodara with honest, reliable, and affordable vehicle rentals. We believe every journey deserves a great ride.</p>
+    <h2 class="section-title">Dwarka's Trusted Rental Partner</h2>
+    <p class="section-sub">Radhe Krishna Bike Rental has been serving the people of Dwarka with honest, reliable, and affordable vehicle rentals. We believe every journey deserves a great ride.</p>
     <div class="about-points">
       <div class="about-point">
         <div class="point-icon">✅</div>
@@ -711,7 +623,7 @@ footer {
         <div class="point-icon">📍</div>
         <div class="point-text">
           <h4>Flexible Pickup</h4>
-          <p>Pick up from our location or choose a convenient spot in Vadodara.</p>
+          <p>Pick up from our location or choose a convenient spot in Dwarka.</p>
         </div>
       </div>
     </div>
@@ -727,26 +639,26 @@ footer {
   <div class="testi-grid">
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">Rented a Royal Enfield for a weekend trip to Pavagadh. Bike was in perfect condition and the booking on WhatsApp was super quick. Highly recommended!</p>
+      <p class="testi-text">Rented the Activa for a trip around Dwarka. Bike was in perfect condition and the booking on WhatsApp was super quick. Highly recommended!</p>
       <div class="testi-author">
         <div class="author-avatar">RK</div>
-        <div><div class="author-name">Rohan Kapoor</div><div class="author-city">Vadodara</div></div>
+        <div><div class="author-name">Rohan Kapoor</div><div class="author-city">Dwarka</div></div>
       </div>
     </div>
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">Used their Honda City for a family trip. Immaculate car, great AC, and the price was the best in town. Will definitely rent again!</p>
+      <p class="testi-text">Used the Ertiga Desire for a family trip. Immaculate car, great AC, and the price was the best in town. Will definitely rent again!</p>
       <div class="testi-author">
         <div class="author-avatar">PM</div>
-        <div><div class="author-name">Priya Mehta</div><div class="author-city">Vadodara</div></div>
+        <div><div class="author-name">Priya Mehta</div><div class="author-city">Dwarka</div></div>
       </div>
     </div>
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">Booked a scooter for a week. Zero hassle, honest pricing, and they even delivered to my location. Radhe Krishna Rental is the best!</p>
+      <p class="testi-text">Booked the scooter for a week. Zero hassle, honest pricing, and they even delivered to my location. Radhe Krishna Rental is the best!</p>
       <div class="testi-author">
         <div class="author-avatar">AS</div>
-        <div><div class="author-name">Arjun Shah</div><div class="author-city">Vadodara</div></div>
+        <div><div class="author-name">Arjun Shah</div><div class="author-city">Dwarka</div></div>
       </div>
     </div>
   </div>
@@ -785,7 +697,7 @@ footer {
         Do you offer home delivery/pickup?
         <span class="arrow">▼</span>
       </button>
-      <div class="faq-a">Yes! We offer delivery and pickup within Vadodara city limits for a small additional charge. Mention this when you message us on WhatsApp and we'll arrange it for you.</div>
+      <div class="faq-a">Yes! We offer delivery and pickup within Dwarka city limits for a small additional charge. Mention this when you message us on WhatsApp and we'll arrange it for you.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
@@ -816,7 +728,7 @@ footer {
           <div class="contact-icon">📍</div>
           <div>
             <h4>Location</h4>
-            <p>Vadodara, Gujarat, India<br>Exact address shared on WhatsApp confirmation</p>
+            <p>Nr. Hotel, Murlidhar National Highway 8E,<br>Aniari, Dwarka, Gujarat 361335</p>
           </div>
         </div>
         <div class="contact-item">
@@ -830,11 +742,11 @@ footer {
           <div class="contact-icon">💬</div>
           <div>
             <h4>WhatsApp</h4>
-            <p>+91 90996 07568<br>Fastest way to reach us</p>
+            <p>+91 XXXXX XXXXX<br>Fastest way to reach us</p>
           </div>
         </div>
       </div>
-      <a href="https://wa.me/919099607568?text=Hello%20Radhe%20Krishna%20Bike%20Rental%2C%20I%20have%20an%20inquiry." class="wa-direct" target="_blank">
+      <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Radhe%20Krishna%20Bike%20Rental%2C%20I%20have%20an%20inquiry." class="wa-direct" target="_blank">
         💬 Chat on WhatsApp
       </a>
     </div>
@@ -849,7 +761,7 @@ footer {
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="#" class="logo" style="color:#fff;">Radhe <span>Krishna</span></a>
-      <p>Vadodara's most trusted bike and car rental service. Quality rides, honest pricing, instant WhatsApp booking.</p>
+      <p>Dwarka's trusted bike and car rental service. Quality rides, honest pricing, instant WhatsApp booking.</p>
     </div>
     <div class="footer-col">
       <h5>Quick Links</h5>
@@ -864,21 +776,19 @@ footer {
     <div class="footer-col">
       <h5>Vehicles</h5>
       <ul>
-        <li><a href="#fleet" onclick="filterFleet('bike')">Motorcycles</a></li>
-        <li><a href="#fleet" onclick="filterFleet('bike')">Scooters</a></li>
+        <li><a href="#fleet" onclick="filterFleet('bike')">Bikes / Scooters</a></li>
         <li><a href="#fleet" onclick="filterFleet('car')">Cars</a></li>
-        <li><a href="#fleet" onclick="filterFleet('car')">SUVs</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Radhe Krishna Bike Rental, Vadodara. All rights reserved.</p>
+    <p>© 2025 Radhe Krishna Bike Rental, Dwarka. All rights reserved.</p>
     <p>Built with ❤️ for the roads of Gujarat</p>
   </div>
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/919099607568?text=Hello%20Radhe%20Krishna%20Bike%20Rental%2C%20I%20want%20to%20book%20a%20vehicle." class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Radhe%20Krishna%20Bike%20Rental%2C%20I%20want%20to%20book%20a%20vehicle." class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
 <!-- BOOKING MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
@@ -894,8 +804,8 @@ footer {
       <div class="vehicle-preview">
         <div class="vehicle-preview-icon" id="modalIcon">🏍️</div>
         <div class="vehicle-preview-info">
-          <h4 id="modalVehicleName">Royal Enfield Classic 350</h4>
-          <p id="modalVehicleType">Motorcycle</p>
+          <h4 id="modalVehicleName">Honda Activa (Active)</h4>
+          <p id="modalVehicleType">Scooter · ₹350/day</p>
         </div>
       </div>
       <div class="wa-note">
@@ -920,7 +830,7 @@ footer {
         </div>
         <div class="form-group full">
           <label>Pickup Location</label>
-          <input type="text" id="pickupLoc" placeholder="e.g. Alkapuri, Vadodara" />
+          <input type="text" id="pickupLoc" placeholder="e.g. Aniari, Dwarka" />
         </div>
         <div class="form-group full">
           <label>Additional Message (Optional)</label>
@@ -956,19 +866,13 @@ function toggleMobileNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
 
-// ── FAQ ──
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  item.classList.toggle('open');
-}
-
 // ── MODAL ──
 let currentVehicle = {};
 
-function openModal(name, type, icon) {
-  currentVehicle = { name, type, icon };
+function openModal(name, type, icon, price) {
+  currentVehicle = { name, type, icon, price };
   document.getElementById('modalVehicleName').textContent = name;
-  document.getElementById('modalVehicleType').textContent = type;
+  document.getElementById('modalVehicleType').textContent = type + ' · ' + price;
   document.getElementById('modalIcon').textContent = icon;
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -989,12 +893,12 @@ function closeModalOnBg(e) {
 
 // ── WHATSAPP BOOKING ──
 function bookOnWhatsApp() {
-  const name    = document.getElementById('custName').value.trim();
-  const phone   = document.getElementById('custPhone').value.trim();
-  const pickup  = document.getElementById('pickupDate').value;
-  const ret     = document.getElementById('returnDate').value;
-  const loc     = document.getElementById('pickupLoc').value.trim();
-  const extra   = document.getElementById('extraMsg').value.trim();
+  const name     = document.getElementById('custName').value.trim();
+  const phone    = document.getElementById('custPhone').value.trim();
+  const pickup   = document.getElementById('pickupDate').value;
+  const ret      = document.getElementById('returnDate').value;
+  const loc      = document.getElementById('pickupLoc').value.trim();
+  const extra    = document.getElementById('extraMsg').value.trim();
 
   if (!name || !phone || !pickup || !ret || !loc) {
     alert('Please fill in all required fields before booking.');
@@ -1003,18 +907,25 @@ function bookOnWhatsApp() {
 
   const msg =
     `🙏 *Radhe Krishna Bike Rental — New Booking Request*\n\n` +
-    `🚗 *Vehicle:* ${currentVehicle.name} (${currentVehicle.type})\n` +
+    `🚗 *Vehicle:* ${currentVehicle.name}\n` +
+    `💰 *Price:* ${currentVehicle.price}\n\n` +
     `👤 *Name:* ${name}\n` +
-    `📱 *Phone:* ${phone}\n` +
+    `📞 *Phone:* ${phone}\n` +
     `📅 *Pickup Date:* ${pickup}\n` +
     `📅 *Return Date:* ${ret}\n` +
     `📍 *Pickup Location:* ${loc}\n` +
-    (extra ? `💬 *Message:* ${extra}\n` : '') +
-    `\nPlease confirm availability. Thank you!`;
+    (extra ? `💬 *Note:* ${extra}\n` : '') +
+    `\n_Sent from radhekrishnabikerental.com_`;
 
   const encoded = encodeURIComponent(msg);
-  window.open(`https://wa.me/919099607568?text=${encoded}`, '_blank');
+  window.open(`https://wa.me/91XXXXXXXXXX?text=${encoded}`, '_blank');
   closeModal();
+}
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  item.classList.toggle('open');
 }
 </script>
 </body>
